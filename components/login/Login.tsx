@@ -37,7 +37,7 @@ export const Login = () => {
               pattern="^\S+@\S+\.\S+$"
               type="email"
             />
-            {error && phone.length <= 0 ? (
+            {error && email.length <= 0 ? (
               <label className="text-red-400 font-semibold">
                 This field is required
               </label>
