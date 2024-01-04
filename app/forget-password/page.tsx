@@ -1,13 +1,12 @@
 "use client";
 
 import { Layout } from "@/components/auth/Layout";
-import { Login } from "@/components/auth/login/Login";
-import Image from "next/image";
+import { ForgetPassword } from "@/components/auth/forgetPassword/ForgetPassword";
 
 export default function Home() {
   return (
     <Layout>
-      <Login />
+      <ForgetPassword />
     </Layout>
   );
 }
