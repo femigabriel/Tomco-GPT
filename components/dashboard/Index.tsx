@@ -17,7 +17,7 @@ export const Index = () => {
       case 0:
         return <Login onNextClick={gotoNextPage} />;
       case 1:
-        return <ChatBoxPage onNextClick={gotoNextPage} />;
+        return <ChatBoxPage  />;
     }
   };
 

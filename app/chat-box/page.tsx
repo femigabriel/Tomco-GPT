@@ -6,7 +6,7 @@ import { Layout } from "@/components/dashboard/layout/Layout";
 export default function Home() {
   return (
     <Layout>
-      <ChatBoxPage />
+     <ChatBoxPage  />;
     </Layout>
   );
 }

@@ -9,7 +9,7 @@ interface Props {
     onNextClick: () => any;
   }
 
-export const ChatBoxPage = ({ onNextClick }: Props) => {
+export const ChatBoxPage = () => {
   return (
     <div className=" w-full">
       <ChatBoxPageInner />
