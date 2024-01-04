@@ -3,7 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Input } from "antd";
 
-export const ChatBoxPage = () => {
+
+
+interface Props {
+    onNextClick: () => any;
+  }
+
+export const ChatBoxPage = ({ onNextClick }: Props) => {
   return (
     <div className=" w-full">
       <ChatBoxPageInner />
