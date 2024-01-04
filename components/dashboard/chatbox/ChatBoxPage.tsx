@@ -2,34 +2,35 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Input } from "antd";
-
-
+import { Layout } from "../layout/Layout";
 
 interface Props {
-    onNextClick: () => any;
-  }
+  onNextClick: () => any;
+}
 
 export const ChatBoxPage = () => {
   return (
-    <div className=" w-full">
-      <ChatBoxPageInner />
-      <div className="flex justify-center items-center py-7">
-        <Input
-          placeholder="Write your text and tell the AI what to do"
-          className="px-[19px] pl-[25px] py-[19px] lg:w-[840px] w-full lg:h-[67px] text-[#A3A3A3] text-sm"
-          suffix={
-            <Image
-              width={40}
-              height={20}
-              src="/assets/icons/downloadIcon.svg"
-              className="cursor-pointer w-[30px] h-[30px]"
-              alt="logo"
-              draggable="false"
-            />
-          }
-        />
+    <Layout>
+      <div className=" w-full">
+        <ChatBoxPageInner />
+        <div className="flex justify-center items-center py-7">
+          <Input
+            placeholder="Write your text and tell the AI what to do"
+            className="px-[19px] pl-[25px] py-[19px] lg:w-[840px] w-full lg:h-[67px] text-[#A3A3A3] text-sm"
+            suffix={
+              <Image
+                width={40}
+                height={20}
+                src="/assets/icons/downloadIcon.svg"
+                className="cursor-pointer w-[30px] h-[30px]"
+                alt="logo"
+                draggable="false"
+              />
+            }
+          />
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
@@ -96,7 +97,7 @@ export const ChatBoxPageInner = () => {
               </div>
             </div>
             <div className="lg:flex gap-5">
-            <div className="bg-[#F8F8FA] cursor-pointer rounded-[10px] mb-5 border-x-0 border-b-0 border-2 border-[#E7E7E7] w-[250.667px] py-[20px] px-[24px]">
+              <div className="bg-[#F8F8FA] cursor-pointer rounded-[10px] mb-5 border-x-0 border-b-0 border-2 border-[#E7E7E7] w-[250.667px] py-[20px] px-[24px]">
                 <p className="text-[#919191] text-sm ">
                   Identify speakers on the last meeting in MS Team →
                 </p>
