@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Input } from "antd";
 import { UploadModal } from "./UploadModal";
-import { Button, Table } from "antd";
+import { Divider, Radio, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import type { TableRowSelection } from "antd/es/table/interface";
 
 interface DataType {
   key: React.Key;
@@ -15,19 +16,20 @@ interface DataType {
 
 const columns: ColumnsType<DataType> = [
   {
-    title: (
-      <div className="flex ">
-        <span>Document name</span>
-        <Image
-          width={40}
-          height={20}
-          src="/assets/icons/arrow-down.svg"
-          className="cursor-pointer w-[16px] h-[16px] ml-2 mt-1"
-          alt="logo"
-          draggable="false"
-        />
-      </div>
-    ),
+    // title: (
+    //   <div className="flex ">
+    //     <span>Document name</span>
+    //     <Image
+    //       width={40}
+    //       height={20}
+    //       src="/assets/icons/arrow-down.svg"
+    //       className="cursor-pointer w-[16px] h-[16px] ml-2 mt-1"
+    //       alt="logo"
+    //       draggable="false"
+    //     />
+    //   </div>
+    // ),
+    title: "Document name",
     dataIndex: "name",
   },
   {
@@ -77,27 +79,49 @@ for (let i = 0; i < 46; i++) {
 
 export const UploadDocuments = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  const start = () => {
-    setLoading(true);
-    // ajax request after empty completing
-    setTimeout(() => {
-      setSelectedRowKeys([]);
-      setLoading(false);
-    }, 1000);
-  };
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
 
-  const rowSelection = {
+  const rowSelection: TableRowSelection<DataType> = {
     selectedRowKeys,
     onChange: onSelectChange,
+    selections: [
+      Table.SELECTION_ALL,
+      Table.SELECTION_INVERT,
+      Table.SELECTION_NONE,
+      {
+        key: "odd",
+        text: "Select Odd Row",
+        onSelect: (changeableRowKeys) => {
+          let newSelectedRowKeys = [];
+          newSelectedRowKeys = changeableRowKeys.filter((_, index) => {
+            if (index % 2 !== 0) {
+              return false;
+            }
+            return true;
+          });
+          setSelectedRowKeys(newSelectedRowKeys);
+        },
+      },
+      {
+        key: "even",
+        text: "Select Even Row",
+        onSelect: (changeableRowKeys) => {
+          let newSelectedRowKeys = [];
+          newSelectedRowKeys = changeableRowKeys.filter((_, index) => {
+            if (index % 2 !== 0) {
+              return true;
+            }
+            return false;
+          });
+          setSelectedRowKeys(newSelectedRowKeys);
+        },
+      },
+    ],
   };
-  const hasSelected = selectedRowKeys.length > 0;
 
   return (
     <div className="px-5">
@@ -144,12 +168,7 @@ export const UploadDocuments = () => {
           dataSource={data}
         />
       </div> */}
-      <div>
-        <div style={{ marginBottom: 16 }}>
-          <span style={{ marginLeft: 8 }}>
-            {hasSelected ? `Selected ${selectedRowKeys.length} items` : ""}
-          </span>
-        </div>
+      <div className="w-full">
         <Table
           rowSelection={rowSelection}
           columns={columns}
