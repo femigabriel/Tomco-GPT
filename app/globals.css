@@ -76,3 +76,14 @@ li {
 h3 {
   color: #333;
 }
+.btn-upload {
+  border-radius: 8px;
+  background: var(--grad, linear-gradient(90deg, #436cff 0%, #1bd6ff 100%));
+  padding: 10px 25px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 24px;
+}
+.ant-upload-wrapper .ant-upload-select {
+  display: block;
+}

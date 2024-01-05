@@ -25,14 +25,16 @@ export const Header = () => {
             alt="logo"
             draggable="false"
           />
-          <Image
-            width={40}
-            height={20}
-            src="/assets/icons/basil_document-outline (1).svg"
-            className="cursor-pointer w-[24px] h-[24px] mt-2"
-            alt="logo"
-            draggable="false"
-          />
+          <Link href="/upload-document">
+            <Image
+              width={40}
+              height={20}
+              src="/assets/icons/basil_document-outline (1).svg"
+              className="cursor-pointer w-[24px] h-[24px] mt-2"
+              alt="logo"
+              draggable="false"
+            />
+          </Link>
         </div>
       </header>
     </div>
