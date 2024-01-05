@@ -161,14 +161,8 @@ export const UploadDocuments = () => {
           </div>
         </div>
       </div>
-      {/* <div className="w-full my-5">
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={data}
-        />
-      </div> */}
-      <div className="w-full">
+    
+      <div className="w-full py-7">
         <Table
           rowSelection={rowSelection}
           columns={columns}
