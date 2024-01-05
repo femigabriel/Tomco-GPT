@@ -87,3 +87,22 @@ h3 {
 .ant-upload-wrapper .ant-upload-select {
   display: block;
 }
+.ant-table-wrapper .ant-table-thead > tr > th {
+  color: #475467;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  background: #fff;
+  height: 44px;
+  border-bottom: 1px solid var(--Gray-200, #eaecf0);
+}
+.ant-table-wrapper {
+  border: 1px solid var(--Gray-200, #eaecf0);
+  border-radius: 10px;
+}
+.ant-table-tbody > tr > td {
+  color: #101828;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}

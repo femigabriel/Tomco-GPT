@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div className="p-[29px] w-full">
-      <header className="flex w-full justify-between py-[20px] px-[39px] border border-[#DBDBDB] rounded-[10px]">
+    <div className="lg:p-[29px] p-2 w-full">
+      <header className="flex w-full justify-between py-[20px] lg:px-[39px] px-[15px] border border-[#DBDBDB] rounded-[10px]">
         <Link href="/">
           <Image
             width={40}
