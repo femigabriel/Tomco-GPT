@@ -13,7 +13,7 @@ export const ChatBoxPage = () => {
     <Layout>
       <div className=" w-full">
         <ChatBoxPageInner />
-        <div className="flex justify-center items-center py-7">
+        <div className="flex justify-center items-center py-7 px-5 lg:px-0">
           <Input
             placeholder="Write your text and tell the AI what to do"
             className="px-[19px] pl-[25px] py-[19px] lg:w-[840px] w-full lg:h-[67px] text-[#A3A3A3] text-sm"
@@ -39,17 +39,17 @@ export const ChatBoxPageInner = () => {
     <div className="w-full flex justify-center text-center">
       <div className="">
         <div className="py-7 pb-12 ">
-          <div className="div">
+          <div className="">
             <h3 className="text-[#333] font-semibold lg:text-3xl text-2xl ">
               Next Generation AI Assistant
             </h3>
-            <p className="py-3 text-base text-[#A3A3A3]">
+            <p className="py-3 lg:text-base text-xs text-[#A3A3A3]">
               Get started with new modern AI that helps you with every
               <br /> single prompt and even more...
             </p>
           </div>
         </div>
-        <div className="px-60  flex justify-center">
+        <div className="lg:px-60 px-10  flex justify-center">
           <div className="w-full">
             <div className="flex justify-between lg:max-w-[650px] lg:mx-16 w-full my-10">
               <Image
